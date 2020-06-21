@@ -18,7 +18,7 @@ export const store = new Vuex.Store({
         }
     },
     getters: {
-        addNameToListGetter: state => {
+        getNameListGetter: state => {
             return state.nameList
         }
     }
