@@ -24,13 +24,13 @@
         data() {
             return {
                 name: '',
-                list: this.$store.getters.getNameListGetter,
+                list: this.$store.getters["nameListModule/getNameListGetter"],
             }
         },
         methods: {
             addToList: function () {
-                this.$store.dispatch('addNameToListAction', this.name)
-                this.list = this.$store.getters.getNameListGetter
+                this.$store.dispatch('nameListModule/addNameToListAction', this.name)
+                this.list = this.$store.getters["nameListModule/getNameListGetter"]
                 this.name = ''
             }
         }
