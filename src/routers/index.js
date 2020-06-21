@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import Router from  'vue-router'
 
-import UpdateView from "@/components/UpdateView";
-import LoginView from "@/components/LoginView";
-import HelloWorld from "@/components/HelloWorld";
-
 Vue.use(Router)
 
 export default new Router({
@@ -13,17 +9,17 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: HelloWorld
+            component: () => import("../components/HelloWorld")
         },
         {
             path: '/update',
             name: 'updateView',
-            component: UpdateView
+            component: () => import("../components/UpdateView")
         },
         {
             path: '/login',
             name: 'login',
-            component: LoginView
+            component: () => import("../components/LoginView")
         }
     ]
 })
